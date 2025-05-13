@@ -115,5 +115,6 @@ export const myThemeAlgorithm: MappingAlgorithm = seedToken => {
     fontSizeXL: supersetTheme.typography.sizes.xl,
 
     lineWidthBold: supersetTheme.gridUnit / 2,
+    fontFamily: "'Ubuntu', 'San Serif'",
   };
 };
