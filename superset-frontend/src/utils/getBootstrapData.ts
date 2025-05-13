@@ -16,8 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import { BootstrapData } from 'src/types/bootstrapTypes';
-import { DEFAULT_BOOTSTRAP_DATA } from 'src/constants';
+import {BootstrapData} from 'src/types/bootstrapTypes';
+import {DEFAULT_BOOTSTRAP_DATA} from 'src/constants';
 
 let cachedBootstrapData: BootstrapData | null = null;
 
@@ -33,11 +33,21 @@ export default function getBootstrapData(): BootstrapData {
   return cachedBootstrapData ?? DEFAULT_BOOTSTRAP_DATA;
 }
 
-const APPLICATION_ROOT_NO_TRAILING_SLASH =
-  getBootstrapData().common.application_root.replace(/\/$/, '');
+let APPLICATION_ROOT_NO_TRAILING_SLASH = '';
+try {
+  APPLICATION_ROOT_NO_TRAILING_SLASH =
+    getBootstrapData().common.application_root.replace(/\/$/, '');
+} catch (e) {
+  console.error(e);
+}
 
-const STATIC_ASSETS_PREFIX_NO_TRAILING_SLASH =
-  getBootstrapData().common.static_assets_prefix.replace(/\/$/, '');
+let STATIC_ASSETS_PREFIX_NO_TRAILING_SLASH = '';
+try {
+  STATIC_ASSETS_PREFIX_NO_TRAILING_SLASH =
+    getBootstrapData().common.static_assets_prefix.replace(/\/$/, '');
+} catch (e) {
+  console.error(e);
+}
 
 /**
  * @returns The configured application root
