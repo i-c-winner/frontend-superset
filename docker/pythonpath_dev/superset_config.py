@@ -72,7 +72,12 @@ CACHE_CONFIG = {
 }
 DATA_CACHE_CONFIG = CACHE_CONFIG
 THUMBNAIL_CACHE_CONFIG = CACHE_CONFIG
-
+LANGUAGES = {
+    'en': {'flag': 'us', 'name': 'English'},
+    'ru': {'flag': 'ru', 'name': 'Русский'},
+    # Добавьте другие языки, если необходимо
+}
+BABEL_DEFAULT_LOCALE = 'ru'
 
 class CeleryConfig:
     broker_url = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_CELERY_DB}"
