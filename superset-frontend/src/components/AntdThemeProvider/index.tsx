@@ -26,7 +26,7 @@ export const AntdThemeProvider = ({
   ...rest
 }: ConfigProviderProps) => (
   <ConfigProvider
-    theme={theme || getTheme(ThemeType.LIGHT)}
+    theme={theme || getTheme(ThemeType.MYTHEME)}
     prefixCls="antd5"
     {...rest}
   >

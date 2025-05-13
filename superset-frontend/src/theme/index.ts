@@ -22,13 +22,16 @@ import { type ThemeConfig } from 'antd-v5';
 import { theme as supersetTheme } from 'src/preamble';
 import { mix } from 'polished';
 import { lightAlgorithm } from './light';
+import { myThemeAlgorithm } from './myThema';
 
 export enum ThemeType {
   LIGHT = 'light',
+  MYTHEME = 'myTheme',
 }
 
 const themes = {
   [ThemeType.LIGHT]: lightAlgorithm,
+  [ThemeType.MYTHEME]: myThemeAlgorithm,
 };
 
 // Want to figure out which tokens look like what? Try this!
@@ -196,5 +199,5 @@ const baseConfig: ThemeConfig = {
 
 export const getTheme = (themeType?: ThemeType) => ({
   ...baseConfig,
-  algorithm: themes[themeType || ThemeType.LIGHT],
+  algorithm: themes[themeType || ThemeType.MYTHEME],
 });
